@@ -220,7 +220,22 @@ h1.logo a {
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 10;
+  border-radius: 5px;
+  margin-top: var(--spacing-1);
+}
+
+.dropdown-content::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg);
+    background-color: var(--background-primary);
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    margin-left: -7px;
+    z-index: -1;
 }
 
 .dropdown-content a {
@@ -631,11 +646,11 @@ button {
 
   .dropdown-content {
     position: relative;
-    background-color: var(--background-secondary);
+    color: var(--font-color);
   }
 
   .dropdown-content a {
-    color: var(--font-secondary);
+    color: var(--font-color);
   }
   
   .contact-us {
