@@ -21,11 +21,11 @@ body {
   --border-radius: 12px;
   --font-color: #323232;
   --font-secondary: #F2F3F4;
-  --accent-primary: #323232;
-  --accent-secondary: #F2F3F4;
+  --accent-primary: #F69322;
+  --accent-secondary: #1176BC;
   --accent-tertiary: #DDDDDD;
   --background-primary: #F2F3F4;
-  --background-secondary: #62098f;
+  --background-secondary: #1176BC;
   --background-opacity: rgba(0, 0, 0, 0.1);
   --font-family-primary: 'Philosopher', serif;
   --font-family-secondary: 'Fira Sans Condensed', sans-serif;
@@ -81,6 +81,11 @@ a {
   text-decoration: none;
 }
 
+a:focus, a:hover {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
 li, ul {
   list-style: none;
   padding: 0 var(--spacing-3);
@@ -131,6 +136,7 @@ li, ul {
   padding: 0;
   background-color: var(--background-secondary);
   color: var(--font-secondary);
+  padding-bottom: var(--spacing-4);
 }
 
 
@@ -142,6 +148,7 @@ nav {
 
 .logo {
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 h1.logo a {
@@ -182,14 +189,22 @@ h1.logo a {
 
 .button {
   border-radius: 20px;
+  border: none;
   background-color: var(--accent-primary);
-  color: var(--accent-secondary);
+  color: var(--font-secondary);
   justify-content: center;
-  margin: var(--spacing-3) auto;
+  margin: var(--spacing-3);
   display: flex;
-  padding: 10px 0;
-  width: 100px;
+  padding: var(--spacing-2) 0;
+  width: 8rem;
   text-align: center;
+  align-items: center;
+}
+
+.button.icon-after::after {
+    padding: 0;
+    font-size: 1rem;
+    margin-left: var(--spacing-2);
 }
 
 .dropbtn {
@@ -208,6 +223,7 @@ h1.logo a {
 .dropdown-content a {
   padding: 12px 16px;
   display: block;
+  color: var(--font-color);
 }
 
 .dropdown-content a:hover {
@@ -250,12 +266,19 @@ h1.logo a {
 
 #footer a {
   margin-bottom: var(--spacing-2);
+  padding-left: var(--spacing-3);
+  text-align: left;
 }
 
 .footer-navigation-items {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.map {
+  max-width: 100%;
+  max-height: 250px;
 }
 
 .social-icons {
@@ -296,7 +319,7 @@ h1.logo a {
 
 .accordion {
   background-color: var(--accent-secondary);
-  color: var(--accent-primary);
+  color: var(--font-secondary);
   cursor: pointer;
   padding: var(--spacing-3);
   width: 100%;
@@ -304,6 +327,7 @@ h1.logo a {
   transition: 0.4s;
   display: flex;
   align-items: center;
+  border-radius: 20px;
 }
 
 .accordion.icon-expand::after {
@@ -313,16 +337,14 @@ h1.logo a {
   padding: 0;
 }
 
+.accordion:hover {
+    background-color: var(--accent-primary);
+  }
 
 button {
   font-family: var(--font-family-secondary);
   font-weight: 400;
   font-size: 1rem;
-}
-
-.accordion:hover {
-  background-color: var(--accent-primary);
-  color: var(--accent-secondary);
 }
 
 .panel {
@@ -456,30 +478,46 @@ button {
   display: inline-block;
   vertical-align: middle;
   font-size: 2rem;
-  font-family: 'Material Icons';
+  font-family: 'Material Icons Outlined';
   font-style: normal;
   font-weight: 400;
   padding: 0 16px;
 }
 
-.icon-hotel::before {
-  content: "\e53a";
+.button.icon-after::after {
+    padding: 0;
 }
 
-.icon-meals::before {
-  content: "\e56c";
+.icon-people::before {
+  content: "\f233";
 }
 
-.icon-backpack::before {
-  content: "\f19c";
+.icon-person-add::before {
+  content:"\e7fe"
 }
 
-.icon-bus::before {
-  content: "\e530";
+.icon-clipboard::before {
+  content: "\e179";
 }
 
-.icon-hike::before {
-  content: "\e50a"
+.icon-support::before {
+  content: "\f0e2";
+}
+
+.icon-wifi::before {
+  content: "\e63e";
+}
+
+.icon-cog::before {
+  content: "\e8b8"
+}
+
+.icon-network::before {
+  content: "\e9f4"
+}
+
+.icon-manual::before {
+  content: "\e0e0"
 }
 
 .icon-chevron-right::after {
@@ -504,7 +542,12 @@ button {
 
 .icon-burger::after {
   content: "\e5d2";
+  color: var(--font-secondary);
 }
+
+.icon-arrow-right::after {
+    content: "\f1df";
+  }
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
@@ -512,13 +555,12 @@ button {
     color: var(--accent-primary);
   }
   
- /* .hero-text {
-    top: 50%;
-    left: 50%;
+ .hero-text {
     width: 100%; 
-    transform: translate(-50%, -50%);
+    position: static;
+    margin-top: 100px;
     max-width: 100%;
-  }*/
+  }
 
   html {
     font-size: 90%; 
@@ -538,13 +580,12 @@ button {
   .navigation-items {
     flex-direction: column;
     position: absolute;
-    top: 5rem; 
+    top: 95px; 
     left: 0;
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     width: 100%;
     height: 100vh;
     padding: 0;
-    box-shadow: 0 2px 5px --background-opacity;
     z-index: 1000;
     align-items: center;
     justify-content: flex-start;
@@ -556,10 +597,10 @@ button {
     padding: var(--spacing-2) 0;
     margin: 0;
     font-size: 1rem;
+    color: var(--font-secondary);
   }
 
   .navigation-items a {
-    border-top: 2px solid var(--accent-primary);
     width: 90vw;
     display: flex;
     margin: 0;
@@ -583,7 +624,7 @@ button {
   }
 
   .dropdown-content a {
-    color: var(--accent-secondary);
+    color: var(--font-secondary);
   }
   
   .contact-us {
