@@ -10,7 +10,7 @@ function toggleDropdown(dropdownBtnId, dropdownContentId) {
     document.getElementById(dropdownBtnId).classList.toggle("active");
   }
   
-  window.onclick = function(event) {
+  window.onmouseover = function(event) {
     if (!event.target.matches('.dropbtn')) {
       var dropdownContents = document.getElementsByClassName("dropdown-content");
       var dropdownButtons = document.getElementsByClassName("dropbtn");

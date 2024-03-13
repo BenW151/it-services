@@ -23,13 +23,14 @@
 
 <body>
   <nav>
+    <div class="nav-gradient"></div>
     <h1 class="logo"><a class="no-hover-styling" href="index.html">Node One</a></h1>
     <div class="burger-menu icon-after icon-burger" onclick="toggleMenu()">
     </div>
     <div class="navigation-items">
       <a class="navigation-item icon-after icon-chevron-right" href="index.html">Home</a>
       <div class="dropdown">
-        <a onclick="toggleDropdown('navDropdown1', 'myDropdown1')" id="navDropdown1" class="dropbtn navigation-item icon-after icon-chevron-right no-active-styling">Company</a>
+        <a onmouseover="toggleDropdown('navDropdown1', 'myDropdown1')" id="navDropdown1" class="dropbtn navigation-item icon-after icon-chevron-right no-active-styling">Company</a>
         <div id="myDropdown1" class="dropdown-content">
           <a class="navigation-item icon-after icon-chevron-right" href="story.html">Our Story</a>
           <a class="navigation-item icon-after icon-chevron-right" href="team.html">Meet the Team</a>
@@ -37,7 +38,7 @@
         </div>
       </div>
       <div class="dropdown">
-        <a onclick="toggleDropdown('navDropdown2', 'myDropdown2')" id="navDropdown2" class="dropbtn navigation-item icon-after icon-chevron-right no-active-styling">Services</a>
+        <a onmouseover="toggleDropdown('navDropdown2', 'myDropdown2')" id="navDropdown2" class="dropbtn navigation-item icon-after icon-chevron-right no-active-styling">Services</a>
         <div id="myDropdown2" class="dropdown-content">
           <a class="navigation-item icon-after icon-chevron-right" href="service1.html">Service 1</a>
           <a class="navigation-item icon-after icon-chevron-right" href="service2.html">Service 2</a>
@@ -68,7 +69,7 @@
           <div class="container-item">
             <h3>Our Services</h3>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <a class="button" href="services.html">Read More</a>
+            <a class="button button-secondary" href="services.html">Read More</a>
           </div>
           <div class="container-item icon-before icon-people">
             <h3>Professional Services</h3>
@@ -80,10 +81,6 @@
           </div>
           <div class="container-item icon-before icon-cog">
             <h3>Field Engineering</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-          <div class="container-item icon-before icon-manual">
-            <h3>Vendor Support</h3>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
           <div class="container-item icon-before icon-network">
@@ -114,15 +111,29 @@
           <h2>Our Key Partners</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac nisi commodo, id ultrices elit congue. Vivamus quis ante ut nunc lobortis gravida. Fusce lacinia eleifend massa, id feugiat leo suscipit nec. Nulla facilisi. Ut euismod nunc ut mi faucibus vestibulum. In hac habitasse platea dictumst. Integer quis risus nec purus vehicula pulvinar.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac nisi commodo, id ultrices elit congue. Vivamus quis ante ut nunc lobortis gravida. Fusce lacinia eleifend massa, id feugiat leo suscipit nec. Nulla facilisi. Ut euismod nunc ut mi faucibus vestibulum. In hac habitasse platea dictumst. Integer quis risus nec purus vehicula pulvinar.</p>
-          <a class="button" href="about.html">Read More</a>
+          <a class="button button-secondary" href="about.html">Read More</a>
         </div>
       </div>
     </section>
 
+    <section id="about">
+        <div class="container two-column">
+          <div class="container-item">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac nisi commodo, id ultrices elit congue. Vivamus quis ante ut nunc lobortis gravida. Fusce lacinia eleifend massa, id feugiat leo suscipit nec. Nulla facilisi. Ut euismod nunc ut mi faucibus vestibulum. In hac habitasse platea dictumst. Integer quis risus nec purus vehicula pulvinar.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac nisi commodo, id ultrices elit congue. Vivamus quis ante ut nunc lobortis gravida. Fusce lacinia eleifend massa, id feugiat leo suscipit nec. Nulla facilisi. Ut euismod nunc ut mi faucibus vestibulum. In hac habitasse platea dictumst. Integer quis risus nec purus vehicula pulvinar.</p>
+            <a class="button button-secondary" href="about.html">Read More</a>
+          </div>
+          <div class="container-item">
+            <img src="images/about.jpg" alt="photo">
+          </div>
+        </div>
+      </section>
+
     <section id="faq">
       <div class="container two-column">
         <div class="container-item">
-          <img src="assets/img/img-2.jpg" alt="photo">
+          <img src="images/about.jpg" alt="photo">
         </div>
         <div class="accordion-container" class="container">
           <h3>Frequently Asked Questions</h3>
@@ -139,49 +150,6 @@
           <button class="accordion icon-after icon-expand">What is Love?</button>
           <div class="panel">
             <p>FLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac nisi commodo, id ultrices elit congue. Vivamus quis ante ut nunc lobortis gravida. Fusce lacinia eleifend massa, id feugiat leo suscipit nec. Nulla facilisi. Ut euismod nunc ut mi faucibus vestibulum. In hac habitasse platea dictumst. Integer quis risus nec purus vehicula pulvinar.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div id="newsletter">
-        <div class="container two-column">
-          <div class="container-item">
-            <div id="mc_embed_shell">
-              <div id="mc_embed_signup">
-                <form action="https://gmail.us18.list-manage.com/subscribe/post?u=3c61226e5bcae71ee942abfec&amp;id=09000d784a&amp;f_id=007630e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
-                  <div id="mc_embed_signup_scroll">
-                    <h4>Sign Up To Our Newsletter</h4>
-                    <div class="mc-field-group">
-                      <label for="mce-EMAIL"></label>
-                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Enter your email">
-                      <span id="email-error">Invalid email address</span>
-                      <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                    </div>
-                    <div id="mce-responses" class="clear foot">
-                      <div class="response" id="mce-error-response" style="display: none;"></div>
-                      <div class="response" id="mce-success-response" style="display: none;"></div>
-                    </div>
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
-                      <input type="text" name="b_3c61226e5bcae71ee942abfec_09000d784a" tabindex="-1" value="">
-                    </div>
-                    <div class="optionalParent">
-                      <div class="clear foot">
-                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="container-item">
-            <p>Hear about our new adventures before anyone else.</p>
-            <p>Be the first to hear about exclusive offers.</p>
-            <p>Access exciting competitions.</p>
-            <p>Receive weekly inspiration and travel stories from solos just like you.</p>
           </div>
         </div>
       </div>
