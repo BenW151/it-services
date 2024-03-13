@@ -132,12 +132,17 @@ li, ul {
   grid-template-columns: repeat(2, 1fr); 
 }
 
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
 .four-column {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
 }
 
-.alt-background {
+.background-alt {
   background-color: var(--background-opacity);
 }
 
@@ -151,7 +156,6 @@ li, ul {
 .hero-text {
   max-width: 90%;
 }
-
 
 nav {
   display: flex;
@@ -217,12 +221,14 @@ h1.logo a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: var(--background-primary);
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
   border-radius: 5px;
   margin-top: var(--spacing-1);
+  left: 50%; 
+  transform: translateX(-50%);
 }
 
 .dropdown-content::after {
@@ -585,7 +591,7 @@ button {
  .hero-text {
     width: 100%; 
     position: static;
-    margin-top: 30px;
+    margin-top: 50px;
     max-width: 100%;
   }
 
