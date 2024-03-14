@@ -42,55 +42,6 @@ function toggleDropdown(dropdownBtnId, dropdownContentId) {
     }
   }
   
-//accordion
-document.addEventListener("DOMContentLoaded", function() {
-var accordionContainer = document.querySelector(".accordion-container");
-
-if (accordionContainer) {
-    accordionContainer.addEventListener("click", function(event) {
-    event.stopPropagation(); // Prevent click from reaching the document
-    if (event.target.classList.contains("accordion")) {
-        var accordionButton = event.target;
-        var panel = accordionButton.nextElementSibling;
-        var isPanelOpen = panel.style.maxHeight && panel.style.maxHeight !== "0px";
-
-        // Close all open panels first
-        var allPanels = document.querySelectorAll(".accordion-container .accordion + *");
-        allPanels.forEach(function(otherPanel) {
-        otherPanel.style.maxHeight = null;
-        otherPanel.previousElementSibling.classList.remove("active");
-        otherPanel.classList.remove("show");
-        });
-
-        // If the panel was already open, it's now closed, so we're done.
-        // Otherwise, open the clicked panel.
-        if (!isPanelOpen) {
-        accordionButton.classList.add("active");
-        panel.classList.add("show");
-        panel.style.maxHeight = "none";
-        var actualHeight = panel.scrollHeight + "px";
-        panel.style.maxHeight = "0";
-        window.requestAnimationFrame(function() {
-            panel.style.maxHeight = actualHeight;
-        });
-        }
-    }
-    });
-
-    // Listen for clicks on the document
-    document.addEventListener("click", function() {
-    // Close all accordion panels
-    var allPanels = document.querySelectorAll(".accordion-container .accordion + *");
-    allPanels.forEach(function(panel) {
-        if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-        panel.previousElementSibling.classList.remove("active");
-        panel.classList.remove("show");
-        }
-    });
-    });
-}
-});
 
 //sticky nav bar on scroll
 window.addEventListener("scroll", function() {

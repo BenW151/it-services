@@ -35,7 +35,7 @@ body {
 * {
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-duration: .15s;
+  transition-duration: .3s;
 }
 
 body {
@@ -226,7 +226,7 @@ h1.logo a {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
   border-radius: 5px;
-  margin-top: var(--spacing-1);
+  margin-top: var(--spacing-3);
   left: 50%; 
   transform: translateX(-50%);
 }
@@ -284,23 +284,12 @@ footer {
   flex-direction: column;
   padding-left: var(--spacing-3);
   padding-right: var(--spacing-3);
-  color: var(--font-secondary);
 }
 
 .map {
   max-width: 100%;
   max-height: 250px;
-}
-
-.social-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-icons a {
-  padding-right: 5px;
-  padding-left: 5px;
+  margin-top: var(--spacing-3);
 }
 
 .copywrite {
@@ -311,43 +300,6 @@ footer {
 
 .designed-by a {
   color: var(--accent-primary);
-}
-
-.accordion-container {
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 90%;
-  margin: auto;
-}
-
-.accordion {
-  background-color: var(--accent-secondary);
-  color: var(--font-secondary);
-  cursor: pointer;
-  padding: var(--spacing-3);
-  width: 100%;
-  border: none;
-  transition: 0.4s;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-}
-
-.accordion.icon-expand::after {
-  display: inline-block;
-  margin-left: auto;
-  position: relative;
-  padding: 0;
-}
-
-.accordion:hover {
-    background-color: var(--accent-primary);
-  }
-
-button {
-  font-family: var(--font-family-secondary);
-  font-weight: 400;
-  font-size: 1rem;
 }
 
 .button {
@@ -380,46 +332,32 @@ button {
     margin-left: var(--spacing-2);
 }
 
-.panel {
-  padding: 0 --spacing-3;
-  background: none;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.5s ease-out;
-  margin-bottom: 0;
-  margin-left: 10px;
-}
-
-.panel.show {
-  max-height: 500px;
-}
-
-.itinerary {
-  border: 2px solid var(--accent-primary);
+.roadmap {
+  border: 2px solid var(--font-color);
   margin-bottom: var(--spacing-3);
-  padding: var(--spacing-4);
+  padding: var(--spacing-3);
   width: 90%;
   margin: auto;
-  
+
 }
 
-.container-item.itinerary {
+.container-item.roadmap {
   grid-column: 2;
   grid-row: 1 / span 2;
 }
 
-.itinerary .itinerary-inner {
+.roadmap .roadmap-inner {
   height: 100%;
   overflow: hidden;
   position: relative;
   text-align: left;
 }
 
-.itinerary h2 {
+.roadmap h2 {
   margin-bottom: var(--spacing-4);
 }
 
-.itinerary .itinerary-inner:before {
+.roadmap .roadmap-inner:before {
   background: var(--background-primary);
   content: " ";
   display: block;
@@ -430,21 +368,21 @@ button {
   width: 2px;
 }
 
-.itinerary .itinerary-inner dl {
+.roadmap .roadmap-inner dl {
   overflow: hidden;
   position: relative;
 }
 
-.itinerary .itinerary-inner dl dd,
-.itinerary .itinerary-inner dl dt {
+.roadmap .roadmap-inner dl dd,
+.roadmap .roadmap-inner dl dt {
   padding-left: var(--spacing-5);
   padding-right: var(--spacing-5);
   position: relative;
 }
 
-.itinerary .itinerary-inner dl dd:after,
-.itinerary .itinerary-inner dl dt:after {
-  background: var(--accent-primary);
+.roadmap .roadmap-inner dl dd:after,
+.roadmap .roadmap-inner dl dt:after {
+  background: var(--accent-secondary);
   bottom: 4px;
   content: " ";
   display: block;
@@ -456,7 +394,7 @@ button {
   z-index: 3;
 }
 
-.itinerary .itinerary-inner dl dt {
+.roadmap .roadmap-inner dl dt {
   font-size: 1.5rem;
   margin-bottom: 0;
   position: relative;
@@ -464,9 +402,9 @@ button {
   font-weight: normal;
 }
 
-.itinerary .itinerary-inner dl dt:before {
+.roadmap .roadmap-inner dl dt:before {
   background: var(--background-primary);
-  border: 2px solid var(--accent-primary);
+  border: 2px solid var(--accent-secondary);
   border-radius: var(--spacing-4);
   content: " ";
   display: block;
@@ -481,30 +419,29 @@ button {
   z-index: 4;
 }
 
-.itinerary .itinerary-inner dl dd {
-  color: var(--accent-primary);
+.roadmap .roadmap-inner dl dd {
+  color: var(--font-color);
   font-size: 1rem !important;
   padding-bottom: 1em;
 }
 
-.itinerary .itinerary-inner dl dd:last-child:after {
+.roadmap .roadmap-inner dl dd:last-child:after {
   display: none;
 }
 
-.included {
-  font-size: 1.25rem;
+.team-member {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-.included .icon-before::before {
-  margin-right: var(--spacing-2);
-}
 
 .icon {
   vertical-align: middle;
-  font-size: 2rem;
-  font-family: 'Material Icons';
+  font-size: 1.5rem;
+  font-family: 'Material Icons Outlined';
   font-style: normal;
   font-weight: 400;
+  padding: 0 var(--spacing-2);
 }
 
 .icon-before::before, .icon-after::after {
@@ -658,30 +595,17 @@ button {
   .dropdown-content a {
     color: var(--font-color);
   }
-  
-  .contact-us {
-    border-radius: 0;
-    background: none;
-    color: var(--accent-primary);
-    width: 90%;
-    padding: 20px 0;
-    margin: 0;
-  }
 
   .container {
     grid-template-columns: 1fr; 
   }
 
-  .container-item.itinerary {
+  .container-item.roadmap {
     grid-column: auto;
     grid-row: auto;
   }
 
-  .accordion {
-    margin-left: 0; 
-  }
-
-  .itinerary {
+  .roadmap {
     width: 100%;
   }
 }
@@ -689,7 +613,7 @@ button {
 
 /* Responsive design for tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-  #footer {
+  .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
