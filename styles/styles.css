@@ -128,7 +128,7 @@ li, ul {
 }
 
 .container-item {
-  padding: 20px;
+  padding: var(--spacing-4);
   flex-direction: column;
   margin-top: 10px;
 }
@@ -273,6 +273,7 @@ h1.logo a {
 }
 
 .dropdown-content a:hover {
+  color: var(--font-secondary);
   background-color: var(--background-secondary);
 }
 
@@ -284,10 +285,39 @@ h1.logo a {
   align-items: center;
 }
 
+#mce-EMAIL, #input-name, #input-message {
+  box-sizing: border-box; 
+  border-radius: 5px; 
+  border: 2px solid var(--font-color);
+  padding-left: var(--spacing-3); 
+  margin-left: var(--spacing-3);
+  margin-bottom: var(--spacing-2);
+  height: 50px; 
+  background-color: var(--background-primary);
+  width: 80%; 
+}
+
+#input-message {
+  height: 100px;
+}
+
+#email-error {
+  display:none; 
+  color: red; 
+  margin-bottom: 16px; 
+  font-weight: bold;
+  padding-left: var(--spacing-3);
+}
+
 footer {
   padding: 0;
   background-color: var(--background-secondary); 
   color: var(--font-secondary);
+}
+
+footer .container-item img {
+  margin: 0;
+  padding-left: var(--spacing-3);
 }
 
 .footer-navigation-items {
@@ -357,9 +387,10 @@ footer {
 
 .roadmap {
   border: 2px solid var(--font-color);
+  border-radius: 5px;
   margin-bottom: var(--spacing-3);
   padding: var(--spacing-3);
-  width: 90%;
+  width: 80%;
   margin: auto;
 
 }
