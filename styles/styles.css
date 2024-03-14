@@ -150,7 +150,7 @@ li, ul {
   background-color: var(--background-secondary);
   color: var(--font-secondary);
   padding-bottom: var(--spacing-4);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .hero-text {
@@ -284,6 +284,7 @@ footer {
   flex-direction: column;
   padding-left: var(--spacing-3);
   padding-right: var(--spacing-3);
+  color: var(--font-secondary);
 }
 
 .map {
@@ -448,7 +449,7 @@ footer {
   z-index: -1;
 }
 
-.team-social:hover {
+.team-social:hover, .team-social:active {
   color: var(--accent-primary);
 }
 
@@ -616,6 +617,10 @@ footer {
 
   .container {
     grid-template-columns: 1fr; 
+  }
+
+  .container-item {
+    padding: 0 var(--spacing-3);
   }
 
   .container-item.roadmap {
