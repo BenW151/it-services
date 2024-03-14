@@ -285,20 +285,24 @@ h1.logo a {
   align-items: center;
 }
 
-#mce-EMAIL, #input-name, #input-message {
+input {
   box-sizing: border-box; 
   border-radius: 5px; 
-  border: 2px solid var(--font-color);
   padding-left: var(--spacing-3); 
   margin-left: var(--spacing-3);
   margin-bottom: var(--spacing-2);
   height: 50px; 
   background-color: var(--background-primary);
   width: 80%; 
+  outline: none;
 }
 
 #input-message {
   height: 100px;
+}
+
+input:focus {
+  border: 2px solid var(--accent-primary);   
 }
 
 #email-error {
