@@ -38,6 +38,18 @@ body {
   transition-duration: .3s;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:after,:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
 body {
   font-family: var(--font-family-tertiary);
   font-weight: normal;
@@ -55,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   padding: 0 var(--spacing-3);
   margin-bottom: var(--spacing-3);
+  margin-top: var(--spacing-3);
 }
 
 h1 {
@@ -80,6 +93,7 @@ p {
   font-weight: normal;
   font-style: normal;
   padding: 0 var(--spacing-3);
+  line-height: 1.5rem;
 }
 
 a {
@@ -216,6 +230,14 @@ h1.logo a {
 
 .dropbtn {
   cursor: pointer;
+}
+
+.show {
+  display: block !important;
+}
+
+.dropdown {
+  position: relative;
 }
 
 .dropdown-content {
@@ -359,7 +381,6 @@ footer {
 }
 
 .roadmap .roadmap-inner:before {
-  background: var(--background-primary);
   content: " ";
   display: block;
   height: 220px;
@@ -424,6 +445,7 @@ footer {
   color: var(--font-color);
   font-size: 1rem !important;
   padding-bottom: 1em;
+  margin-left: 0
 }
 
 .roadmap .roadmap-inner dl dd:last-child:after {
