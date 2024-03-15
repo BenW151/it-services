@@ -303,6 +303,7 @@ input {
   height: 50px; 
   width: 90%; 
   outline: none;
+  background-color: var(--background-opacity);
 }
 
 #input-message {
@@ -316,7 +317,7 @@ input:focus {
 #email-error {
   display:none; 
   color: red; 
-  margin-bottom: 16px; 
+  margin-bottom: var(--spacing-3); 
   font-weight: bold;
   padding-left: var(--spacing-3);
 }
@@ -608,14 +609,16 @@ footer .container-item img {
 
 .icon-chevron-right::after {
   content: "\e5cc";
+  transition: transform 0.1s linear;
+}
+
+.icon-chevron-right.active::after {
+  content: "\e5cc";
+  transform: rotate(90deg);
 }
 
 .icon-chevron-left::after {
   content: "\e5cb";
-}
-
-.icon-chevron-right.active::after {
-  content: "\e5cf";
 }
 
 .icon-expand::after {
@@ -631,8 +634,12 @@ footer .container-item img {
   color: var(--font-color-secondary);
 }
 
+.icon-burger.active::after {
+  content: "\e5cd";
+}
+
 .icon-arrow-right::after {
-    content: "\f1df";
+  content: "\f1df";
 }
 
 /* Responsive design for mobile */

@@ -1,7 +1,9 @@
 //burger menu
 function toggleMenu() {
 var navigationItems = document.querySelector('.navigation-items');
+var burgerIcon = document.querySelector('.burger-menu');
 navigationItems.classList.toggle('nav-open');
+burgerIcon.classList.toggle("active");
 }
 
 //nav dropdown
