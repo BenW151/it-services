@@ -692,12 +692,6 @@ footer .container-item img {
     align-items: center;
   }
 
-  .navigation-items a:last-child {
-    position: relative;
-    width: 8rem;
-    right: calc(42.5vw - 4rem);
-  }
-
   .navigation-items.nav-open {
     transform: translateX(0);
   }
