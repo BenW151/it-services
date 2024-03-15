@@ -295,13 +295,14 @@ h1.logo a {
 
 input {
   box-sizing: border-box; 
+  border: 2px solid var(--font-color);   
+  position: relative;
   border-radius: 5px; 
-  padding-left: var(--spacing-3); 
+  padding: var(--spacing-3); 
+  margin-bottom: var(--spacing-2);  
   margin-left: var(--spacing-3);
-  margin-bottom: var(--spacing-2);
   height: 50px; 
-  background-color: var(--background-primary);
-  width: 80%; 
+  width: 90%; 
   outline: none;
 }
 
