@@ -198,7 +198,7 @@ nav {
     white-space: nowrap;
 }
 
-h1.logo a {
+h2.logo a {
     color: var(--font-color-secondary);
     margin-left: var(--spacing-3);
 }
