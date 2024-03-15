@@ -9,7 +9,7 @@ html {
 html,
 body {
   height: 100%;
-  color: var(--font-color);
+  color: var(--font-color-primary);
 }
 
 :root {
@@ -18,18 +18,18 @@ body {
   --spacing-3: 16px;
   --spacing-4: 24px;
   --spacing-5: 40px;
-  --border-radius: 12px;
-  --font-color: #323232;
-  --font-secondary: #F2F3F4;
+  --border-radius-box: 5px;
+  --font-color-primary: #323232;
+  --font-color-secondary: #F2F3F4;
   --accent-primary: #F69322;
   --accent-secondary: #1176BC;
-  --accent-tertiary: #DDDDDD;
+  --accent-tertiary: #F2F3F4;
   --background-primary: #F2F3F4;
   --background-secondary: #1176BC;
   --background-opacity: rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(90deg, var(--accent-primary), var(--font-color-secondary));
   --font-family-primary: 'Montserrat', sans-serif;
-  --font-family-secondary: 'Fira Sans Condensed', sans-serif;
-  --font-family-tertiary: 'PT Sans', sans-serif;
+  --font-family-secondary: 'PT Sans', sans-serif;
 }
 
 * {
@@ -48,7 +48,7 @@ body {
 }
 
 body {
-  font-family: var(--font-family-tertiary);
+  font-family: var(--font-family-secondary);
   font-weight: normal;
   font-style: normal;
   font-size: 1rem;
@@ -86,7 +86,7 @@ h4, h5, h6 {
 }
 
 p {
-  font-family: var(--font-family-tertiary);
+  font-family: var(--font-family-secondary);
   font-weight: normal;
   font-style: normal;
   padding: 0 var(--spacing-3);
@@ -94,16 +94,16 @@ p {
 }
 
 a {
-  color: var(--font-color);
+  color: var(--font-color-primary);
   text-decoration: none;
   padding: var(--spacing-1) 0;
 }
 
 a:focus, a:hover {
-    color: var(--font-secondary);
+    color: var(--font-color-secondary);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-radius: var(--border-radius-box);
 }
 
 li, ul {
@@ -154,20 +154,20 @@ li, ul {
 
 .background-alt {
   background-color: var(--background-opacity);
-  border-radius: 5px;
+  border-radius: var(--border-radius-box);
 }
 
 #hero .container {
   background-color: var(--background-secondary);
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
   padding-bottom: var(--spacing-4);
   min-height: 100vh;
 }
 
 #learn-more .container {
   text-align: center;
-  background-image: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
-  color: var(--font-secondary);
+  background-image: var(--gradient);
+  color: var(--font-color-secondary);
 }
 
 #learn-more .button {
@@ -185,7 +185,7 @@ nav {
 }
 
 .nav-gradient {
-  background-image: linear-gradient(90deg, var(--accent-primary), var(--font-secondary));
+  background-image: var(--gradient);
   height: 0.5rem;
   z-index: 10000;
   position: absolute;
@@ -199,7 +199,7 @@ nav {
 }
 
 h1.logo a {
-    color: var(--font-secondary);
+    color: var(--font-color-secondary);
     margin-left: var(--spacing-3);
 }
 
@@ -227,7 +227,7 @@ h1.logo a {
   margin: var(--spacing-1);
   padding-left: var(--spacing-3);
   padding-right: var(--spacing-3);
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
 }
 
 
@@ -254,7 +254,7 @@ h1.logo a {
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
-  border-radius: 5px;
+  border-radius: var(--border-radius-box);
   margin-top: var(--spacing-3);
   left: 50%; 
   transform: translateX(-50%);
@@ -276,11 +276,11 @@ h1.logo a {
 .dropdown-content a {
   padding: 12px 16px;
   display: block;
-  color: var(--font-color);
+  color: var(--font-color-primary);
 }
 
 .dropdown-content a:hover {
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
   background-color: var(--background-secondary);
 }
 
@@ -294,9 +294,9 @@ h1.logo a {
 
 input {
   box-sizing: border-box; 
-  border: 2px solid var(--font-color);   
+  border: 2px solid var(--font-color-primary);   
   position: relative;
-  border-radius: 5px; 
+  border-radius: var(--border-radius-box); 
   padding: var(--spacing-3); 
   margin-bottom: var(--spacing-2);  
   margin-left: var(--spacing-3);
@@ -324,7 +324,7 @@ input:focus {
 footer {
   padding: 0;
   background-color: var(--background-secondary); 
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
 }
 
 footer .container-item img {
@@ -340,7 +340,7 @@ footer .container-item img {
 .footer-navigation-item {
   padding-left: var(--spacing-3);
   padding-right: var(--spacing-3);
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
 }
 
 #contact .icon-before::before{
@@ -351,8 +351,11 @@ footer .container-item img {
 
 #contact .contact-items a {
   padding-left: calc(1.5rem + 2*(var(--spacing-3)));
-  color: var(--font-color);
-  padding-top: 0;
+  color: var(--font-color-primary);
+}
+
+.contact-items h6 {
+  margin-bottom: 0;
 }
 
 .contact-details {
@@ -363,7 +366,7 @@ footer .container-item img {
 .contact-items a {
   padding-left: var(--spacing-3);
   padding-right: var(--spacing-3);
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
   display: block;
 }
 
@@ -388,7 +391,7 @@ footer .container-item img {
   border-radius: 20px;
   border: none;
   background-color: var(--accent-tertiary);
-  color: var(--font-color);
+  color: var(--font-color-primary);
   justify-content: center;
   margin: var(--spacing-3);
   display: flex;
@@ -400,7 +403,7 @@ footer .container-item img {
 
 .button-secondary {
   background-color: var(--accent-secondary);
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
 }
 
 .button:hover {
@@ -415,8 +418,8 @@ footer .container-item img {
 }
 
 .roadmap {
-  border: 2px solid var(--font-color);
-  border-radius: 5px;
+  border: 2px solid var(--font-color-primary);
+  border-radius: var(--border-radius-box);
   margin-bottom: var(--spacing-3);
   padding: var(--spacing-3);
   width: 80%;
@@ -487,7 +490,7 @@ footer .container-item img {
 .roadmap .roadmap-inner dl dt:before {
   background: var(--background-primary);
   border: 2px solid var(--accent-secondary);
-  border-radius: var(--spacing-4);
+  border-radius: 50%;
   content: " ";
   display: block;
   font-size: 1.5rem;
@@ -502,7 +505,7 @@ footer .container-item img {
 }
 
 .roadmap .roadmap-inner dl dd {
-  color: var(--font-color);
+  color: var(--font-color-primary);
   font-size: 1rem !important;
   padding-bottom: 1em;
   margin-left: 0
@@ -526,7 +529,7 @@ footer .container-item img {
   width: 100%;
   height: 80%;
   bottom: 0;
-  border-radius: 10px;
+  border-radius: var(--border-radius-box);
   background-color: var(--background-secondary);
   z-index: -1;
 }
@@ -625,7 +628,7 @@ footer .container-item img {
 
 .icon-burger::after {
   content: "\e5d2";
-  color: var(--font-secondary);
+  color: var(--font-color-secondary);
 }
 
 .icon-arrow-right::after {
@@ -683,10 +686,16 @@ footer .container-item img {
   }
 
   .navigation-items a {
-    width: 90vw;
+    width: 85vw;
     display: flex;
     margin: 0;
     align-items: center;
+  }
+
+  .navigation-items a:last-child {
+    position: relative;
+    width: 8rem;
+    right: calc(42.5vw - 4rem);
   }
 
   .navigation-items.nav-open {
@@ -702,11 +711,11 @@ footer .container-item img {
 
   .dropdown-content {
     position: relative;
-    color: var(--font-color);
+    color: var(--font-color-primary);
   }
 
   .dropdown-content a {
-    color: var(--font-color);
+    color: var(--font-color-primary);
   }
 
   .container {
@@ -722,7 +731,7 @@ footer .container-item img {
     grid-row: auto;
   }
 
-  .roadmap {
+  .roadmap, .contact-details {
     width: 100%;
   }
 }
