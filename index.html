@@ -205,66 +205,28 @@
             <h3>Get In Touch</h3>
             <div class="fcf-body">
               <div id="fcf-form">
-                <form id="fcf-form-id" class="fcf-form-class" method="post" action="php/contact-form-process.php">
-        
-                  <div class="fcf-form-group">
-                      <label for="Name" class="fcf-label">Your name</label>
-                      <div class="fcf-input-group">
-                        <input type="text" id="Name" name="Name" class="fcf-form-control" required>
-                      </div>
-                  </div>
-          
-                  <div class="fcf-form-group">
-                      <label for="Email" class="fcf-label">Your email address</label>
-                      <div class="fcf-input-group">
-                        <input type="email" id="Email" name="Email" class="fcf-form-control" required>
-                      </div>
-                  </div>
-          
-                  <div class="fcf-form-group">
-                      <label for="Message" class="fcf-label">Your message</label>
-                      <div class="fcf-input-group">
-                        <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
-                      </div>
-                  </div>
-          
-                  <div class="fcf-form-group">
-                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block button button-secondary">Send Message</button>
-                  </div>          
-                </form>
+                <form
+                action="https://formspree.io/f/mjvnevrk"
+                method="POST"
+                >
+                <label>
+                  <p>Name:</p>
+                  <input type="name" name="name">
+                </label>
+                <label>
+                  <p>Email:</p>
+                  <input type="email" name="email">
+                </label>
+                <label>
+                  <p>Message:</p>
+                  <textarea name="message"></textarea>
+                </label>
+                <button class="button button-secondary" type="submit">Send</button>
+              </form>
               </div>
             </div>
-
-
-           <!--  <input type="text" name="NAME" class="required name" id="input-name" required="" value="" placeholder="Enter your name">
-            <div id="mc_embed_shell">
-              <div id="mc_embed_signup">
-                <form action="https://gmail.us18.list-manage.com/subscribe/post?u=3c61226e5bcae71ee942abfec&amp;id=09000d784a&amp;f_id=007630e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
-                  <div id="mc_embed_signup_scroll">
-                    <div class="mc-field-group">
-                      <label for="mce-EMAIL"></label>
-                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Enter your email">
-                      <span id="email-error">Invalid email address</span>
-                      <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                    </div>
-                    <input type="text" name="MESSAGE" class="required message" id="input-message" required="" value="" placeholder="Enter your message">
-                    <div id="mce-responses" class="clear foot">
-                      <div class="response" id="mce-error-response" style="display: none;"></div>
-                      <div class="response" id="mce-success-response" style="display: none;"></div>
-                    </div>
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                      <input type="text" name="b_3c61226e5bcae71ee942abfec_09000d784a" tabindex="-1" value="">
-                    </div>
-                    <div class="optionalParent">
-                      <div class="clear foot">
-                        <input type="submit" name="send" id="mc-embedded-subscribe" class="button button-secondary" value="Send">
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>-->
           </div>
+
           <div class="container-item contact-details background-alt">
             <h3>Our Contact Details</h3>
             <div class="contact-items">

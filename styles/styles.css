@@ -298,20 +298,15 @@ input, textarea {
   position: relative;
   border-radius: var(--border-radius-box); 
   padding: var(--spacing-3); 
-  margin-bottom: var(--spacing-2);  
   margin-left: var(--spacing-3);
-  height: 50px; 
   width: 90%; 
   outline: none;
   background-color: var(--background-opacity);
+  font-family: var(--font-family-secondary);
 }
 
 label {
   padding-left: var(--spacing-3);
-}
-
-#input-message {
-  height: 100px;
 }
 
 input:focus {
