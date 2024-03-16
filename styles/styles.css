@@ -292,7 +292,7 @@ h2.logo a {
   align-items: center;
 }
 
-input {
+input, textarea {
   box-sizing: border-box; 
   border: 2px solid var(--font-color-primary);   
   position: relative;
@@ -304,6 +304,10 @@ input {
   width: 90%; 
   outline: none;
   background-color: var(--background-opacity);
+}
+
+label {
+  padding-left: var(--spacing-3);
 }
 
 #input-message {

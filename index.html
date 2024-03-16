@@ -203,7 +203,40 @@
         <div class="container two-column">
           <div class="container-item">
             <h3>Get In Touch</h3>
-            <input type="text" name="NAME" class="required name" id="input-name" required="" value="" placeholder="Enter your name">
+            <div class="fcf-body">
+              <div id="fcf-form">
+                <form id="fcf-form-id" class="fcf-form-class" method="post" action="php/contact-form-process.php">
+        
+                  <div class="fcf-form-group">
+                      <label for="Name" class="fcf-label">Your name</label>
+                      <div class="fcf-input-group">
+                        <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                      </div>
+                  </div>
+          
+                  <div class="fcf-form-group">
+                      <label for="Email" class="fcf-label">Your email address</label>
+                      <div class="fcf-input-group">
+                        <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                      </div>
+                  </div>
+          
+                  <div class="fcf-form-group">
+                      <label for="Message" class="fcf-label">Your message</label>
+                      <div class="fcf-input-group">
+                        <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                      </div>
+                  </div>
+          
+                  <div class="fcf-form-group">
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block button button-secondary">Send Message</button>
+                  </div>          
+                </form>
+              </div>
+            </div>
+
+
+           <!--  <input type="text" name="NAME" class="required name" id="input-name" required="" value="" placeholder="Enter your name">
             <div id="mc_embed_shell">
               <div id="mc_embed_signup">
                 <form action="https://gmail.us18.list-manage.com/subscribe/post?u=3c61226e5bcae71ee942abfec&amp;id=09000d784a&amp;f_id=007630e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -220,7 +253,6 @@
                       <div class="response" id="mce-success-response" style="display: none;"></div>
                     </div>
                     <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
                       <input type="text" name="b_3c61226e5bcae71ee942abfec_09000d784a" tabindex="-1" value="">
                     </div>
                     <div class="optionalParent">
@@ -231,7 +263,7 @@
                   </div>
                 </form>
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="container-item contact-details background-alt">
             <h3>Our Contact Details</h3>
