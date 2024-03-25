@@ -309,7 +309,7 @@ label {
   padding-left: var(--spacing-3);
 }
 
-input:focus {
+input:focus, textarea:focus {
   border: 2px solid var(--accent-primary);   
 }
 
