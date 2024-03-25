@@ -99,11 +99,8 @@ a {
   padding: var(--spacing-1) 0;
 }
 
-a:focus, a:hover {
-    color: var(--font-color-secondary);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: var(--border-radius-box);
+a:hover {
+  text-decoration: underline;
 }
 
 li, ul {
@@ -230,6 +227,11 @@ h2.logo a {
   color: var(--font-color-secondary);
 }
 
+a.navigation-item:focus, a.navigation-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-box);
+  text-decoration: none;
+}
 
 .navigation-item.icon-chevron-right::after {
   display: none;
@@ -407,16 +409,17 @@ footer .container-item img {
   color: var(--font-color-secondary);
 }
 
-.button:hover {
+.button:hover, .button.navigation-item:hover {
   background-color: var(--accent-primary);
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button.icon-after::after {
-    padding: 0;
-    font-size: 1rem;
-    margin-left: var(--spacing-2);
+  padding: 0;
+  font-size: 1rem;
+  margin-left: var(--spacing-2);
 }
 
 .roadmap {
@@ -538,7 +541,6 @@ footer .container-item img {
 
 .team-social:hover, .team-social:active {
   color: var(--accent-primary);
-  background: none;
 }
 
 
