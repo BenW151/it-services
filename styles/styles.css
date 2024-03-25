@@ -410,6 +410,7 @@ footer .container-item img {
 .button:hover {
   background-color: var(--accent-primary);
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .button.icon-after::after {
@@ -537,6 +538,7 @@ footer .container-item img {
 
 .team-social:hover, .team-social:active {
   color: var(--accent-primary);
+  background: none;
 }
 
 
