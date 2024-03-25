@@ -398,6 +398,8 @@ footer .container-item img {
   width: 8rem;
   text-align: center;
   align-items: center;
+  font-family: var(--font-family-secondary);
+  font-size: 1rem;
 }
 
 .button-secondary {
