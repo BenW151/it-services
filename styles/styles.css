@@ -678,7 +678,7 @@ footer .container-item img {
   .navigation-items {
     flex-direction: column;
     position: absolute;
-    top: calc(3rem + 2*(var(--spacing-3))); 
+    top: calc(3rem + 2*(var(--spacing-2))); 
     left: 0;
     background-color: var(--background-secondary);
     width: 100%;
