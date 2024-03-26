@@ -27,7 +27,7 @@ body {
   --background-primary: #F2F3F4;
   --background-secondary: #1176BC;
   --background-opacity: rgba(0, 0, 0, 0.1);
-  --gradient: linear-gradient(90deg, var(--accent-primary), var(--font-color-secondary));
+  --gradient: linear-gradient(30deg, var(--accent-primary), var(--accent-tertiary));
   --font-family-primary: 'Montserrat', sans-serif;
   --font-family-secondary: 'PT Sans', sans-serif;
 }
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: .27px;
 }
 
@@ -164,7 +164,6 @@ li, ul {
 #learn-more .container {
   text-align: center;
   background-image: var(--gradient);
-  color: var(--font-color-secondary);
 }
 
 #learn-more .button {
@@ -411,6 +410,7 @@ footer .container-item img {
 
 .button:hover, .button.navigation-item:hover {
   background-color: var(--accent-primary);
+  color: var(--font-color-secondary);
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
