@@ -541,6 +541,7 @@ footer .container-item img {
 
 .team-social:hover, .team-social:active {
   color: var(--accent-primary);
+  text-decoration: none;
 }
 
 
