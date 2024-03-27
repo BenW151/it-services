@@ -1,4 +1,4 @@
-//burger menu
+//* Burger Menu
 function toggleMenu() {
   var navigationItems = document.querySelector(".navigation-items");
   var burgerIcon = document.querySelector(".burger-menu");
@@ -6,48 +6,113 @@ function toggleMenu() {
   burgerIcon.classList.toggle("active");
 }
 
-//nav dropdown
+//* Dropdown
+document.addEventListener("DOMContentLoaded", function () {
+  setupDropdownBehavior();
+  window.addEventListener("resize", debounce(setupDropdownBehavior, 250));
+});
+
 function toggleDropdown(dropdownBtnId, dropdownContentId) {
-  var dropdownContents = document.getElementsByClassName("dropdown-content");
-  var dropdownButtons = document.getElementsByClassName("dropbtn");
+  const dropdownContent = document.getElementById(dropdownContentId);
+  const dropdownButton = document.getElementById(dropdownBtnId);
 
-  // Close all dropdowns first
-  for (let i = 0; i < dropdownContents.length; i++) {
-    if (dropdownContents[i].id !== dropdownContentId) {
-      // Check to not close the one we're about to toggle
-      dropdownContents[i].classList.remove("show");
-    }
-    if (dropdownButtons[i].id !== dropdownBtnId) {
-      // Similarly, check for button not being the one we're about to toggle
-      dropdownButtons[i].classList.remove("active");
-    }
-  }
+  // Toggle the visibility of the dropdown content
+  dropdownContent.classList.toggle("show");
 
-  // Now toggle the clicked dropdown and button
-  document.getElementById(dropdownContentId).classList.toggle("show");
-  document.getElementById(dropdownBtnId).classList.toggle("active");
+  // Toggle the 'active' class on the dropdown button
+  dropdownButton.classList.toggle("active"); // This line ensures the 'active' class is correctly toggled
+
+  // Close all other dropdowns except the current one
+  const allDropdownContents = document.querySelectorAll(".dropdown-content");
+  allDropdownContents.forEach((content) => {
+    if (content.id !== dropdownContentId) {
+      content.classList.remove("show");
+    }
+  });
+
+  const allDropdownButtons = document.querySelectorAll(".dropbtn");
+  allDropdownButtons.forEach((button) => {
+    if (button.id !== dropdownBtnId) {
+      button.classList.remove("active");
+    }
+  });
 }
 
-window.onclick = function (event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdownContents = document.getElementsByClassName("dropdown-content");
-    var dropdownButtons = document.getElementsByClassName("dropbtn");
+function setupDropdownBehavior() {
+  const isMobileView = window.matchMedia("(max-width: 768px)").matches;
+  const dropdowns = document.querySelectorAll(".dropdown");
 
-    for (let i = 0; i < dropdownContents.length; i++) {
-      var openDropdown = dropdownContents[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-        // Also remove the 'active' class from the button if there's a matching button
-        if (dropdownButtons[i]) {
-          // Added check to ensure there's a matching button
-          dropdownButtons[i].classList.remove("active");
-        }
-      }
+  dropdowns.forEach((dropdown) => {
+    const btn = dropdown.querySelector(".dropbtn");
+    const dropdownContentId = btn.getAttribute("data-dropdown");
+
+    // Clean up previous event listeners
+    btn.removeEventListener("click", handleDropdownClick);
+    btn.removeEventListener("mouseenter", handleDropdownMouseEnter);
+    dropdown.removeEventListener("mouseleave", handleDropdownMouseLeave);
+
+    if (isMobileView) {
+      btn.addEventListener("click", handleDropdownClick);
+    } else {
+      btn.addEventListener("mouseenter", handleDropdownMouseEnter);
+      dropdown.addEventListener("mouseleave", handleDropdownMouseLeave);
     }
-  }
-};
+  });
 
-//sticky nav bar on scroll
+  // Only for mobile: Close all dropdowns when clicking outside
+  if (isMobileView) {
+    document.addEventListener("click", closeAllDropdowns, true);
+  } else {
+    document.removeEventListener("click", closeAllDropdowns, true);
+  }
+}
+
+function handleDropdownClick(event) {
+  const btn = event.target;
+  const dropdownContentId = btn.getAttribute("data-dropdown");
+  toggleDropdown(btn.id, dropdownContentId);
+  event.stopPropagation(); // Prevent triggering closeAllDropdowns
+}
+
+function handleDropdownMouseEnter(event) {
+  const btn = event.target;
+  const dropdownContentId = btn.getAttribute("data-dropdown");
+  toggleDropdown(btn.id, dropdownContentId);
+}
+
+function handleDropdownMouseLeave(event) {
+  const dropdownContent =
+    event.currentTarget.querySelector(".dropdown-content");
+  dropdownContent.classList.remove("show");
+}
+
+function closeAllDropdowns(event) {
+  if (!event.target.matches(".dropbtn")) {
+    const dropdowns = document.querySelectorAll(".dropdown-content");
+    dropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("show");
+    });
+  }
+}
+
+// Debounce function to limit resize event handling
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+//* Sticky Nav Bar On Scroll
 window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
 
@@ -60,7 +125,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-//newsletter email input validation
+//* Newsletter Email Input Validation
 document.addEventListener("DOMContentLoaded", function () {
   var emailInput = document.getElementById("mce-EMAIL");
   var submitButton = document.getElementById("mc-embedded-subscribe");

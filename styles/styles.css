@@ -275,6 +275,15 @@ a.navigation-item:hover {
   transform: translateX(-50%);
 }
 
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--spacing-1) * -1);
+  height: var(--spacing-1);
+  min-width: 200px;
+  z-index: -1;
+}
+
 .dropdown-content::after {
   content: "";
   width: 14px;
