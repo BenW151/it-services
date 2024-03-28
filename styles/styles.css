@@ -712,6 +712,10 @@ footer .container-item img {
     z-index: 1000;
   }
 
+  h2.logo a {
+    margin-left: 0;
+  }
+
   .burger-menu {
     cursor: pointer;
     margin: auto;
@@ -720,42 +724,42 @@ footer .container-item img {
   }
 
   .icon-burger {
-    position: relative; /* Establishes a positioning context */
-    width: 2rem; /* Ensure sufficient space for the icon */
-    height: 2rem; /* Match height to your icon size */
-    display: inline-block; /* Keep inline behavior */
+    position: relative; 
+    width: 2rem; 
+    height: 2rem;
+    display: inline-block; 
   }
   
   .icon-burger::before,
   .icon-burger::after {
-    position: absolute; /* Positioned absolutely within .icon-burger */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for exact centering */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transitions */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
   
   .icon-burger::before {
-    content: "\e5d2"; /* Burger icon */
+    content: "\e5d2"; 
     color: var(--font-color-secondary);
-    opacity: 1; /* Visible */
+    opacity: 1;
   }
   
   .icon-burger::after {
-    content: "\e5cd"; /* X icon */
+    content: "\e5cd";
     color: var(--font-color-secondary);
-    opacity: 0; /* Initially hidden */
-    transform: translate(-50%, -50%) rotate(90deg); /* Start rotated and centered */
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
   }
   
   .icon-burger.active::before {
     opacity: 0; /* Hide burger */
-    transform: translate(-50%, -50%) rotate(-90deg); /* Rotate out */
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
   
   .icon-burger.active::after {
     opacity: 1; /* Show X */
-    transform: translate(-50%, -50%) rotate(0deg); /* Rotate to normal */
+    transform: translate(-50%, -50%) rotate(0deg); 
   }
 
   .navigation-items {
