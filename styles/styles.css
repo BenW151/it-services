@@ -806,6 +806,10 @@ footer .container-item img {
   .blur-box {
     display: none;
   }
+
+  .quote-svg {
+    display: none;
+  }
 }
 
 /* Responsive design for tablet */
