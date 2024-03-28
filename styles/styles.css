@@ -226,14 +226,15 @@ nav {
   top: 0;
 }
 
-.logo {
-  text-transform: uppercase;
-  white-space: nowrap;
+h2.logo a:hover {
+  color: var(--accent-primary);
 }
 
 h2.logo a {
   color: var(--font-color-secondary);
   margin-left: var(--spacing-3);
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .no-hover-styling:hover,
@@ -282,27 +283,6 @@ a.navigation-item:hover {
 .dropdown {
   position: relative;
 }
-
-/*.dropdown-content {
-  display: none;
-  max-height: 0;
-  position: absolute;
-  background-color: var(--background-primary);
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  border-radius: var(--border-radius-box);
-  margin-top: var(--spacing-3);
-  left: 50%;
-  transform: translateX(-50%);
-  transition: max-height 0.5s linear;
-}
-
-.show {
-  display: block !important;
-  max-height: 2000px;
-  transition: max-height 0.5s linear;
-}*/
 
 .dropdown-content {
   display: block;
@@ -358,14 +338,6 @@ a.navigation-item:hover {
 .dropdown-content a:hover {
   color: var(--font-color-secondary);
   background-color: var(--background-secondary);
-}
-
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  margin: auto;
-  margin-right: var(--spacing-3);
-  align-items: center;
 }
 
 input,
@@ -712,15 +684,6 @@ footer .container-item img {
   content: "\e15b";
 }
 
-.icon-burger::after {
-  content: "\e5d2";
-  color: var(--font-color-secondary);
-}
-
-.icon-burger.active::after {
-  content: "\e5cd";
-}
-
 .icon-arrow-right::after {
   content: "\f1df";
 }
@@ -750,7 +713,49 @@ footer .container-item img {
   }
 
   .burger-menu {
-    display: block;
+    cursor: pointer;
+    margin: auto;
+    margin-right: var(--spacing-3);
+    align-items: center;
+  }
+
+  .icon-burger {
+    position: relative; /* Establishes a positioning context */
+    width: 2rem; /* Ensure sufficient space for the icon */
+    height: 2rem; /* Match height to your icon size */
+    display: inline-block; /* Keep inline behavior */
+  }
+  
+  .icon-burger::before,
+  .icon-burger::after {
+    position: absolute; /* Positioned absolutely within .icon-burger */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transitions */
+  }
+  
+  .icon-burger::before {
+    content: "\e5d2"; /* Burger icon */
+    color: var(--font-color-secondary);
+    opacity: 1; /* Visible */
+  }
+  
+  .icon-burger::after {
+    content: "\e5cd"; /* X icon */
+    color: var(--font-color-secondary);
+    opacity: 0; /* Initially hidden */
+    transform: translate(-50%, -50%) rotate(90deg); /* Start rotated and centered */
+  }
+  
+  .icon-burger.active::before {
+    opacity: 0; /* Hide burger */
+    transform: translate(-50%, -50%) rotate(-90deg); /* Rotate out */
+  }
+  
+  .icon-burger.active::after {
+    opacity: 1; /* Show X */
+    transform: translate(-50%, -50%) rotate(0deg); /* Rotate to normal */
   }
 
   .navigation-items {
