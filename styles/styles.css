@@ -490,8 +490,6 @@ footer {
 }
 
 .roadmap {
-  border: 2px solid var(--font-color-primary);
-  border-radius: var(--border-radius-box);
   margin-bottom: var(--spacing-3);
   padding: var(--spacing-3);
   width: 80%;
