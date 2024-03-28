@@ -92,7 +92,7 @@ h3 {
 h4,
 h5,
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 p {
@@ -116,7 +116,17 @@ a:hover {
 li,
 ul {
   list-style: none;
-  padding: 0 var(--spacing-3);
+  padding: var(--spacing-3);
+  margin-top: 0;
+}
+
+ul {
+  padding-top: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 3rem;
 }
 
 .container {
@@ -695,8 +705,12 @@ footer .container-item img {
   content: "\e15b";
 }
 
-.icon-arrow-right::after {
-  content: "\f1df";
+.icon-arrow-right::before {
+  content: "\e5cc";
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  padding-left: var(--spacing-1);
 }
 
 /* Responsive design for mobile */
@@ -705,11 +719,20 @@ footer .container-item img {
     color: var(--accent-primary);
   }
 
+  #hero .container {
+    min-height: 0;
+    height: 85vh;
+  }
+
   .hero-text {
     width: 100%;
     position: static;
     margin-top: 70px;
     max-width: 100%;
+  }
+
+  .hero-image {
+    display: none;
   }
 
   html {
