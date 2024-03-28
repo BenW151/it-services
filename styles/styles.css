@@ -638,6 +638,7 @@ footer .container-item img {
   font-style: normal;
   font-weight: 400;
   padding: 0 var(--spacing-3);
+  color: var(--accent-secondary);
 }
 
 .button.icon-after::after {
@@ -691,6 +692,7 @@ footer .container-item img {
 .icon-chevron-right::after {
   content: "\e5cc";
   transition: transform 0.1s linear;
+  color: inherit;
 }
 
 .icon-chevron-right.active::after {
