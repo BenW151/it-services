@@ -588,6 +588,17 @@ footer .container-item img {
   z-index: -1;
 }
 
+.feedback-author {
+  font-weight: bold;
+  border-bottom: solid 2px var(--accent-secondary);
+  padding-bottom: var(--spacing-3);
+}
+
+.feedback-last {
+  border-bottom: solid 2px var(--accent-primary);
+  padding-bottom: 16px;
+}
+
 .team-social:hover,
 .team-social:active {
   color: var(--accent-primary);
@@ -724,42 +735,42 @@ footer .container-item img {
   }
 
   .icon-burger {
-    position: relative; 
-    width: 2rem; 
+    position: relative;
+    width: 2rem;
     height: 2rem;
-    display: inline-block; 
+    display: inline-block;
   }
-  
+
   .icon-burger::before,
   .icon-burger::after {
-    position: absolute; 
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
-  
+
   .icon-burger::before {
-    content: "\e5d2"; 
+    content: "\e5d2";
     color: var(--font-color-secondary);
     opacity: 1;
   }
-  
+
   .icon-burger::after {
     content: "\e5cd";
     color: var(--font-color-secondary);
     opacity: 0;
     transform: translate(-50%, -50%) rotate(90deg);
   }
-  
+
   .icon-burger.active::before {
     opacity: 0; /* Hide burger */
     transform: translate(-50%, -50%) rotate(-90deg);
   }
-  
+
   .icon-burger.active::after {
     opacity: 1; /* Show X */
-    transform: translate(-50%, -50%) rotate(0deg); 
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   .navigation-items {
