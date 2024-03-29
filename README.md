@@ -8,7 +8,7 @@ This project is a website for an IT services company. It's designed to showcase 
 
 Since the website is a simple static site made with HTML, CSS, and JavaScript, you can view it by opening the `index.html` file in any modern web browser. No special installation or server setup is required.
 
-If you're interested in seeing the live version (if hosted), you can visit https://benw151.github.io/it-services/index.html
+If you're interested in seeing the live version, you can visit https://benw151.github.io/node-one/index.html
 
 ## Key Features
 

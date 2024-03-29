@@ -276,6 +276,10 @@ a.navigation-item:hover {
   display: none;
 }
 
+.navigation-items .logo-svg {
+  display: none;
+}
+
 .dropbtn {
   cursor: pointer;
 }
@@ -820,6 +824,16 @@ textarea:focus {
     margin-left: auto;
     position: relative;
     padding: 0;
+  }
+
+  .navigation-item.button {
+    margin-top: calc(var(--spacing-3));
+  }
+
+  .navigation-items .logo-svg {
+    display: block;
+    margin-top: 180%;
+    position: absolute;
   }
 
   .dropdown-content {
