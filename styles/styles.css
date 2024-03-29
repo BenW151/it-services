@@ -408,7 +408,7 @@ textarea:focus {
 .map {
   max-width: 100%;
   max-height: 250px;
-  margin-top: var(--spacing-3);
+  padding: var(--spacing-3);
 }
 
 .copyright p {
@@ -531,7 +531,7 @@ textarea:focus {
   display: block;
   font-size: 1.5rem;
   height: 8px;
-  left: 8px;
+  left: 6px;
   line-height: var(--spacing-4);
   position: absolute;
   text-align: center;
