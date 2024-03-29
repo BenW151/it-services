@@ -832,7 +832,7 @@ textarea:focus {
 
   .navigation-items .logo-svg {
     display: block;
-    margin-top: 180%;
+    margin-top: 80vh;
     position: absolute;
   }
 
