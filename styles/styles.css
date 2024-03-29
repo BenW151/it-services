@@ -865,6 +865,10 @@ textarea:focus {
   .quote-svg {
     display: none;
   }
+
+  footer {
+    text-align: center;
+  }
 }
 
 /* Responsive design for tablet */
