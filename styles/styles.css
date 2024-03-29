@@ -832,8 +832,9 @@ textarea:focus {
 
   .navigation-items .logo-svg {
     display: block;
-    margin-top: 80vh;
     position: absolute;
+    margin-top: auto;
+    bottom: 15vh;
   }
 
   .dropdown-content {
