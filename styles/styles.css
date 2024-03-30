@@ -169,6 +169,11 @@ li {
   padding-bottom: 0;
 }
 
+.span-column-3 {
+  grid-column: 1 / span 3;
+  padding-bottom: 0;
+}
+
 .background-coloured {
   background-color: var(--background-secondary);
   color: var(--font-color-secondary);
@@ -407,12 +412,6 @@ textarea:focus {
   padding-right: var(--spacing-3);
   color: var(--font-color-secondary);
   display: block;
-}
-
-.map {
-  max-width: 100%;
-  max-height: 250px;
-  padding: var(--spacing-3);
 }
 
 .copyright p {
@@ -859,7 +858,7 @@ textarea:focus {
     padding: var(--spacing-3);
   }
 
-  .span-column-2 {
+  .span-column-2, .span-column-3 {
     grid-column: 1 / span 1;
   }
 
