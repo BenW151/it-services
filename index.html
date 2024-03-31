@@ -577,16 +577,38 @@
                   <form action="https://formspree.io/f/mjvnevrk" method="POST">
                     <label>
                       <p>Name:</p>
-                      <input type="name" name="name" />
+                      <input
+                        type="name"
+                        name="name"
+                        autocomplete="name"
+                        required />
                     </label>
                     <label>
                       <p>Email:</p>
-                      <input type="email" name="email" />
+                      <input
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                        required />
+                    </label>
+                    <label>
+                      <p>Phone Number:</p>
+                      <input type="tel" name="tel" autocomplete="tel" />
+                    </label>
+                    <label>
+                      <p>Company Name:</p>
+                      <input
+                        type="text"
+                        name="company-name"
+                        autocomplete="work"
+                        required />
+                      <!--TODO confirm correct fields-->
                     </label>
                     <label>
                       <p>Message:</p>
-                      <textarea name="message"></textarea>
+                      <textarea name="message" required></textarea>
                     </label>
+                    <!--TODO add captcha-->
                     <button class="button button-secondary" type="submit">
                       Send
                     </button>
@@ -790,7 +812,7 @@
     <footer>
       <div id="footer">
         <div class="container three-column background-coloured">
-         <!-- <svg
+          <!-- <svg
             class="logo-svg"
             style="position: absolute; right: 0; bottom: 0; opacity: 0.2"
             version="1.0"

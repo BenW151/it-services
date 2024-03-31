@@ -218,15 +218,7 @@ footer .logo-svg {
 #hero .logo-svg {
   display: block;
   margin: auto;
-}
-
-#learn-more .container {
-  text-align: center;
-  background-image: var(--gradient);
-}
-
-#learn-more .button {
-  margin: auto;
+  /*TODO add fade in on initial load*/
 }
 
 nav {
@@ -237,7 +229,7 @@ nav {
 
 .nav-gradient {
   background-image: var(--gradient);
-  height: 0.5rem;
+  height: var(--spacing-1);
   z-index: 10000;
   position: absolute;
   width: 100%;
@@ -424,6 +416,7 @@ textarea:focus {
 
 .designed-by a {
   color: var(--accent-primary);
+  /*TODO hover animation*/
 }
 
 .button {
@@ -537,12 +530,12 @@ textarea:focus {
   display: block;
   font-size: 1.5rem;
   height: 8px;
+  width: 8px;
   left: 6px;
+  top: 0.75rem;
   line-height: var(--spacing-4);
   position: absolute;
   text-align: center;
-  top: 1rem;
-  width: 8px;
   z-index: 4;
 }
 
@@ -595,6 +588,15 @@ textarea:focus {
 .team-social:active {
   color: var(--accent-primary);
   text-decoration: none;
+}
+
+#learn-more .container {
+  text-align: center;
+  background-image: var(--gradient);
+}
+
+#learn-more .button {
+  margin: auto;
 }
 
 .icon {
@@ -729,8 +731,17 @@ textarea:focus {
     top: 0;
     width: 100%;
     z-index: 1000;
+    background: none;
+  }
+
+  nav::before {
+    content: '';
+    position: absolute;
     background: rgb(17, 118, 188, 0.8);
     backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
 
   h2.logo a {
@@ -774,21 +785,22 @@ textarea:focus {
   }
 
   .icon-burger.active::before {
-    opacity: 0; /* Hide burger */
+    opacity: 0;
     transform: translate(-50%, -50%) rotate(-90deg);
   }
 
   .icon-burger.active::after {
-    opacity: 1; /* Show X */
+    opacity: 1;
     transform: translate(-50%, -50%) rotate(0deg);
   }
 
   .navigation-items {
     flex-direction: column;
     position: absolute;
-    top: calc(3rem + 2 * (var(--spacing-2)));
     left: 0;
-    background-color: var(--background-secondary);
+    top: calc(44px + 3 * (var(--spacing-1)));
+    background: rgb(17, 118, 188, 0.8);
+    backdrop-filter: blur(10px);
     width: 100%;
     height: 100vh;
     padding: 0;
@@ -863,7 +875,8 @@ textarea:focus {
     padding: var(--spacing-3);
   }
 
-  .span-column-2, .span-column-3 {
+  .span-column-2,
+  .span-column-3 {
     grid-column: 1 / span 1;
   }
 
@@ -884,7 +897,6 @@ textarea:focus {
   .quote-svg {
     display: none;
   }
-
 }
 
 /* Responsive design for tablet */
