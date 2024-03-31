@@ -157,3 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize on load
   validateEmail();
 });
+
+// Logo fade in 
+window.onload = function() {
+  document.body.className += " loaded";
+}

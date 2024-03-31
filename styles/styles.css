@@ -221,6 +221,21 @@ footer .logo-svg {
   /*TODO add fade in on initial load*/
 }
 
+.fadein {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.1s;
+  -moz-transition: opacity 1.5s;
+  -webkit-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s, transform 0.5s;
+}
+
+body.loaded .fadein {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -799,6 +814,7 @@ textarea:focus {
     position: absolute;
     left: 0;
     top: calc(44px + 3 * (var(--spacing-1)));
+    /*! Fix height */
     background: rgb(17, 118, 188, 0.8);
     backdrop-filter: blur(10px);
     width: 100%;
