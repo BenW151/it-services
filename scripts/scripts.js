@@ -92,6 +92,10 @@ function closeAllDropdowns(event) {
     dropdowns.forEach((dropdown) => {
       dropdown.classList.remove("show");
     });
+    const dropbtns = document.querySelectorAll(".dropbtn");
+    dropbtns.forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
   }
 }
 
