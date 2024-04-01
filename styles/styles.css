@@ -103,11 +103,6 @@ a {
   margin-right: auto;
 }
 
-a:hover {
-  text-decoration: underline;
-  /*TODO hover animation*/
-}
-
 li,
 ul {
   list-style: none;
@@ -437,6 +432,11 @@ footer .contact-items {
   color: var(--accent-primary);
 }
 
+.designed-by a:hover {
+  color: var(--accent-tertiary);
+  background: none;
+}
+
 .button {
   border-radius: 20px;
   border: none;
@@ -620,6 +620,7 @@ footer .contact-items {
 #stats .icon-before::before {
   position: relative;
   font-size: 3rem;
+  display: flex;
 }
 
 #stats .container-item {
@@ -838,7 +839,6 @@ footer .contact-items {
     position: absolute;
     left: 0;
     top: calc(42px + 3 * (var(--spacing-1)));
-    /*TODO Fix height */
     background: rgb(17, 118, 188, 0.8);
     backdrop-filter: blur(10px);
     width: 100%;
@@ -943,9 +943,5 @@ footer .contact-items {
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  #stats .icon-before::before {
-    display: none;
   }
 }
