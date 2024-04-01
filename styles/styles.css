@@ -400,6 +400,22 @@ textarea:focus {
   color: var(--font-color-secondary);
 }
 
+.footer-social-icons {
+  margin-top: 8px;
+}
+
+.footer-social-icons a {
+  color: var(--accent-tertiary);
+  font-size: 1.75rem;
+  padding: 0;
+  margin-left: var(--spacing-3);
+}
+
+.footer-social-icons a:hover {
+  color: var(--accent-primary);
+  background: none;
+}
+
 #contact .icon-before::before {
   font-size: 1.5rem;
   padding-left: 0;
@@ -731,6 +747,10 @@ textarea:focus {
 
 .icon-expand.active::after {
   content: "\e15b";
+}
+
+.icon-send::before {
+  content: "\e163";
 }
 
 .icon-arrow-right::before {
