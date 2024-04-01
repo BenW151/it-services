@@ -258,7 +258,7 @@ h2.logo a {
 
 h2.logo a:hover {
   color: var(--accent-primary);
-  text-decoration: none;
+  background: none;
 }
 
 .navigation-items {
@@ -389,7 +389,7 @@ textarea:focus {
 }
 
 .footer-navigation-items,
-footer .contact-items {
+.contact-items {
   display: flex;
   flex-direction: column;
 }
@@ -403,11 +403,12 @@ footer .contact-items {
 #contact .icon-before::before {
   font-size: 1.5rem;
   padding-left: 0;
+  padding-right: calc(2 * var(--spacing-3));
   color: var(--accent-secondary);
 }
 
 #contact .contact-items a {
-  padding-left: calc(1.5rem + 2 * (var(--spacing-3)));
+  margin-left: calc(1.5rem + 2 * (var(--spacing-3)));
   color: var(--font-color-primary);
 }
 
@@ -621,6 +622,7 @@ footer .contact-items {
   position: relative;
   font-size: 3rem;
   display: flex;
+  color: inherit;
 }
 
 #stats .container-item {
