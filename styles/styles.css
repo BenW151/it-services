@@ -910,7 +910,7 @@ textarea:focus {
 
   .navigation-items .logo-svg {
     display: block;
-    position: static;
+    position: relative;
     margin-top: auto;
     margin-bottom: 12.5vh
   }
