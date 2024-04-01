@@ -278,6 +278,10 @@ h2.logo a:hover {
   color: var(--font-color-secondary);
 }
 
+.nav-logo {
+  display: none;
+}
+
 a:focus,
 a:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -873,6 +877,7 @@ textarea:focus {
     display: flex;
     margin: 0;
     align-items: center;
+    justify-content: center;
   }
 
   a.navigation-item:focus,
@@ -897,19 +902,25 @@ textarea:focus {
     margin-top: calc(var(--spacing-3));
   }
 
+  /*.nav-logo {
+    display: flex;
+    margin-top: calc(50% - 100px);
+    transform: translateY(-50%);
+  }*/
+
   .navigation-items .logo-svg {
-    /*display: block;
+    display: flex;
     position: absolute;
     margin-top: auto;
-    bottom: 15vh;
-    z-index: -1;*/
+    bottom: 12.5vh;
+    z-index: -1;
     /*TODO fix logo */
-    display: flex;
+   /* display: flex;
     position: relative;
     margin-top: auto;
     bottom: 15vh;
-    z-index: -1;
-  }  
+    z-index: -1;*/
+  }
 
   .dropdown-content {
     color: var(--font-color-primary);
