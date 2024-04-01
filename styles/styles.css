@@ -100,6 +100,7 @@ a {
   color: var(--font-color-primary);
   text-decoration: none;
   padding: var(--spacing-1) 0;
+  margin-right: auto;
 }
 
 a:hover {
@@ -198,6 +199,7 @@ li {
 
 .blur-box-top {
   margin-top: 0;
+  margin-bottom: auto;
 }
 
 .blur-box-bottom {
@@ -281,8 +283,8 @@ h2.logo a:hover {
   color: var(--font-color-secondary);
 }
 
-a.navigation-item:focus,
-a.navigation-item:hover {
+a:focus,
+a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius-box);
   text-decoration: none;
@@ -391,7 +393,8 @@ textarea:focus {
   padding-left: var(--spacing-3);
 }
 
-.footer-navigation-items {
+.footer-navigation-items,
+footer .contact-items {
   display: flex;
   flex-direction: column;
 }
@@ -621,7 +624,7 @@ textarea:focus {
 
 #stats .container-item {
   padding: var(--spacing-2);
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   width: 90%;
   height: 90%;
@@ -630,9 +633,9 @@ textarea:focus {
 
 #stats .container-item .icon-before {
   display: flex;
-  justify-content: center; 
-  max-width: 100px; 
-  margin: 0 auto; 
+  justify-content: center;
+  max-width: 100px;
+  margin: 0 auto;
 }
 
 .icon {
@@ -771,7 +774,7 @@ textarea:focus {
   }
 
   nav::before {
-    content: '';
+    content: "";
     position: absolute;
     background: rgb(17, 118, 188, 0.8);
     backdrop-filter: blur(10px);
