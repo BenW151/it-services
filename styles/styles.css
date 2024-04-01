@@ -902,9 +902,11 @@ textarea:focus {
 
   .navigation-items .logo-svg {
     display: block;
-    position: relative;
+    position: absolute;
     margin-top: auto;
-    margin-bottom: 12.5vh
+    bottom: 15vh;
+    z-index: -1;
+    /*TODO fix logo */
   }
 
   .dropdown-content {
