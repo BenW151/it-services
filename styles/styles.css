@@ -393,14 +393,15 @@ textarea:focus {
 }
 
 .footer-social-icons {
-  margin-top: 8px;
+  margin-top: var(--spacing-4);
+  margin-left: var(--spacing-2);
 }
 
 .footer-social-icons a {
   color: var(--accent-tertiary);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   padding: 0;
-  margin-left: var(--spacing-3);
+  margin-left: var(--spacing-2);
 }
 
 .footer-social-icons a:hover {
@@ -739,10 +740,6 @@ textarea:focus {
 
 .icon-expand.active::after {
   content: "\e15b";
-}
-
-.icon-send::before {
-  content: "\e163";
 }
 
 .icon-arrow-right::before {

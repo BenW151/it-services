@@ -64,6 +64,7 @@
 
     <!-- JavaScript Files -->
     <script type="text/javascript" src="scripts/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/83d90bf61e.js" crossorigin="anonymous"></script>
 
     <!-- Social Media Meta Tags -->
     <meta
@@ -624,11 +625,14 @@
               <h2>Get In Touch</h2>
               <div class="fcf-body">
                 <div id="fcf-form">
-                  <form action="https://formspree.io/f/mjvnevrk" method="POST">
+                  <form
+                    action="https://formspree.io/f/mjvnevrk"
+                    method="POST"
+                    autocomplete="on">
                     <label>
                       <p>Name:</p>
                       <input
-                        type="name"
+                        type="text"
                         name="name"
                         autocomplete="name"
                         required />
@@ -650,16 +654,15 @@
                       <input
                         type="text"
                         name="company-name"
-                        autocomplete="work"
+                        autocomplete="organization"
                         required />
                     </label>
                     <label>
                       <p>Message:</p>
-                      <textarea name="message" required></textarea>
+                      <textarea type="text" name="message" required></textarea>
                     </label>
-                    <!--TODO add captcha-->
                     <button class="button button-secondary" type="submit">
-                      Send
+                      Submit
                     </button>
                   </form>
                 </div>
@@ -922,11 +925,12 @@
                 href="https://www.linkedin.com/company/nodeone-limited/"
                 aria-label="Node One LinkedIn"
                 target="_blank"
-                class="icon icon-person-add"></a>
+                class="icon fa-brands fa-linkedin-in"></a>
+                <!--TODO replace icon with non font awesome icon-->
               <a
                 href="contact.html"
                 aria-label="Contact Us Page"
-                class="icon icon-send"></a>
+                class="icon icon-email"></a>
             </div>
           </div>
 
