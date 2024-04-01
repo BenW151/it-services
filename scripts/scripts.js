@@ -129,87 +129,59 @@ window.addEventListener("scroll", function () {
   }
 });
 
-//* Newsletter Email Input Validation
-document.addEventListener("DOMContentLoaded", function () {
-  var emailInput = document.getElementById("mce-EMAIL");
-  var submitButton = document.getElementById("mc-embedded-subscribe");
-  var errorMessage = document.getElementById("email-error");
-
-  function validateEmail() {
-    var emailValue = emailInput.value;
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email pattern for validation
-
-    if (emailValue === "") {
-      // If email field is empty
-      errorMessage.style.display = "none"; // Hide error message
-      submitButton.disabled = true; // Keep the Subscribe button disabled
-    } else if (emailPattern.test(emailValue)) {
-      errorMessage.style.display = "none"; // Hide error message
-      submitButton.disabled = false; // Enable the Subscribe button
-    } else {
-      errorMessage.style.display = "block"; // Show error message
-      submitButton.disabled = true; // Disable the Subscribe button
-    }
-  }
-
-  emailInput.addEventListener("input", validateEmail);
-
-  // Initialize on load
-  validateEmail();
-});
-
-// Confirm site loaded 
-window.onload = function() {
+// Confirm site loaded
+window.onload = function () {
   document.body.className += " loaded";
-}
+};
 
 // Counter
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  const counters = document.querySelectorAll('.counter');
+document.addEventListener("DOMContentLoaded", (event) => {
+  const counters = document.querySelectorAll(".counter");
   const animationDuration = 1500; // 5 seconds for the animation
   const updateInterval = 10; // Update every 50 milliseconds
 
   const startCount = (element) => {
-    const target = +element.getAttribute('data-num');
-    const isPercentage = element.hasAttribute('data-is-percentage'); 
+    const target = +element.getAttribute("data-num");
+    const isPercentage = element.hasAttribute("data-is-percentage");
     const steps = animationDuration / updateInterval;
     const increment = target / steps;
     let count = 0;
 
     const updateCount = () => {
-        if (count < target) {
-            count += increment;
-            if (isPercentage) {
-                element.innerText = `${Math.ceil(count)}%`;
-            } else {
-                element.innerText = Math.ceil(count);
-            }
-
-            if (count < target) {
-                setTimeout(updateCount, updateInterval);
-            } else {
-                element.innerText = isPercentage ? `${target}%` : target;
-            }
+      if (count < target) {
+        count += increment;
+        if (isPercentage) {
+          element.innerText = `${Math.ceil(count)}%`;
+        } else {
+          element.innerText = Math.ceil(count);
         }
+
+        if (count < target) {
+          setTimeout(updateCount, updateInterval);
+        } else {
+          element.innerText = isPercentage ? `${target}%` : target;
+        }
+      }
     };
 
     updateCount();
-};
+  };
 
-
-  const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if(entry.isIntersecting) {
-              startCount(entry.target);
-              observer.unobserve(entry.target);
-          }
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCount(entry.target);
+          observer.unobserve(entry.target);
+        }
       });
-  }, {
-      threshold: 0.5
-  });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
-  counters.forEach(counter => {
-      observer.observe(counter);
+  counters.forEach((counter) => {
+    observer.observe(counter);
   });
 });

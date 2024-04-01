@@ -380,14 +380,6 @@ textarea:focus {
   border: 2px solid var(--accent-primary);
 }
 
-#email-error {
-  display: none;
-  color: red;
-  margin-bottom: var(--spacing-3);
-  font-weight: bold;
-  padding-left: var(--spacing-3);
-}
-
 .footer-navigation-items,
 .contact-items {
   display: flex;
