@@ -104,6 +104,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  /*TODO hover animation*/
 }
 
 li,
@@ -191,6 +192,7 @@ li {
   border-radius: var(--border-radius-box);
   width: 80%;
   margin: auto;
+  margin-bottom: var(--spacing-3);
   z-index: 10;
 }
 
@@ -218,10 +220,9 @@ footer .logo-svg {
 #hero .logo-svg {
   display: block;
   margin: auto;
-  /*TODO add fade in on initial load*/
 }
 
-.fadein {
+.fade-in {
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.1s;
@@ -231,7 +232,7 @@ footer .logo-svg {
   transition: opacity 1.5s, transform 0.5s;
 }
 
-body.loaded .fadein {
+body.loaded .fade-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -431,7 +432,6 @@ textarea:focus {
 
 .designed-by a {
   color: var(--accent-primary);
-  /*TODO hover animation*/
 }
 
 .button {
@@ -612,6 +612,27 @@ textarea:focus {
 
 #learn-more .button {
   margin: auto;
+}
+
+#stats .icon-before::before {
+  position: relative;
+  font-size: 3rem;
+}
+
+#stats .container-item {
+  padding: var(--spacing-2);
+  align-items: center; 
+  justify-content: center;
+  width: 90%;
+  height: 90%;
+  text-wrap: nowrap;
+}
+
+#stats .container-item .icon-before {
+  display: flex;
+  justify-content: center; 
+  max-width: 100px; 
+  margin: 0 auto; 
 }
 
 .icon {
@@ -813,8 +834,8 @@ textarea:focus {
     flex-direction: column;
     position: absolute;
     left: 0;
-    top: calc(44px + 3 * (var(--spacing-1)));
-    /*! Fix height */
+    top: calc(42px + 3 * (var(--spacing-1)));
+    /*TODO Fix height */
     background: rgb(17, 118, 188, 0.8);
     backdrop-filter: blur(10px);
     width: 100%;
@@ -906,7 +927,7 @@ textarea:focus {
     width: 100%;
   }
 
-  .blur-box {
+  #testimonials .blur-box {
     display: none;
   }
 
@@ -919,5 +940,9 @@ textarea:focus {
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  #stats .icon-before::before {
+    display: none;
   }
 }

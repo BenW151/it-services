@@ -158,7 +158,58 @@ document.addEventListener("DOMContentLoaded", function () {
   validateEmail();
 });
 
-// Logo fade in 
+// Confirm site loaded 
 window.onload = function() {
   document.body.className += " loaded";
 }
+
+// Counter
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const counters = document.querySelectorAll('.counter');
+  const animationDuration = 1500; // 5 seconds for the animation
+  const updateInterval = 10; // Update every 50 milliseconds
+
+  const startCount = (element) => {
+    const target = +element.getAttribute('data-num');
+    const isPercentage = element.hasAttribute('data-is-percentage'); 
+    const steps = animationDuration / updateInterval;
+    const increment = target / steps;
+    let count = 0;
+
+    const updateCount = () => {
+        if (count < target) {
+            count += increment;
+            if (isPercentage) {
+                element.innerText = `${Math.ceil(count)}%`;
+            } else {
+                element.innerText = Math.ceil(count);
+            }
+
+            if (count < target) {
+                setTimeout(updateCount, updateInterval);
+            } else {
+                element.innerText = isPercentage ? `${target}%` : target;
+            }
+        }
+    };
+
+    updateCount();
+};
+
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if(entry.isIntersecting) {
+              startCount(entry.target);
+              observer.unobserve(entry.target);
+          }
+      });
+  }, {
+      threshold: 0.5
+  });
+
+  counters.forEach(counter => {
+      observer.observe(counter);
+  });
+});
