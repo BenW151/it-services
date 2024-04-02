@@ -902,12 +902,6 @@ textarea:focus {
     margin-top: calc(var(--spacing-3));
   }
 
-  /*.nav-logo {
-    display: flex;
-    margin-top: calc(50% - 100px);
-    transform: translateY(-50%);
-  }*/
-
   .navigation-items .logo-svg {
     display: flex;
     position: absolute;
